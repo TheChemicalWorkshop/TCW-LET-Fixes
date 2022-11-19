@@ -21,6 +21,14 @@ for (const msg of messages) {
 
     const msgUser = msg.querySelectorAll(".Author")[0].getElementsByTagName('a')[0].getAttribute("title");
 
+    // ! makes your own posts different color so you can see what you wrote :)
+    // yourself
+    // 2F2F33 - red, not the best choice, but works
+    if (msgUser == username) {
+      msg.style.backgroundColor = "#631A07";
+      //msg.style.border = "1px dotted red";
+    }
+
     // // don't tell anyone, let's keep this our secret 😘
     // 1D2040
     if (msgUser == "DeadlyChemist") {
@@ -34,6 +42,10 @@ for (const msg of messages) {
       msg.style.backgroundColor = "#6E305E";
       //msg.style.border = "1px dotted red";
     }
+
+
+
+
   }
 
   // * makes all @yourname visible
@@ -42,6 +54,9 @@ for (const msg of messages) {
     msg.style.backgroundColor = "#404229";
   }
 
+
+
+
 }
 
 
@@ -49,11 +64,11 @@ for (const msg of messages) {
 // ! makes the h1 tags less visible, a lot of work to be done here actually
 for (const spammyMsg of spammyMessages) { 
   var h1Elements = spammyMsg.getElementsByTagName("h1");
-  if (h1Elements.length >= 1) {
-    //h1Elements[0].style.color = "#FF0000";
-    //h1Elements[0].style.border = "3px solid darkgreen";
-    h1Elements[0].style.opacity = "0.3";
-    h1Elements[0].style.fontSize = "small";
+  for (const h1Element of h1Elements) {
+    //h1Element.style.color = "#FF0000";
+    //h1Element.style.border = "3px solid darkgreen";
+    h1Element.style.opacity = "0.3";
+    h1Element.style.fontSize = "small";
   }
 
 }
