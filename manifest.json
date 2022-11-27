@@ -3,7 +3,7 @@
   "description": "Fixes some issues with LET, made my Matti from The Chemical Workshop",
   "manifest_version": 2,
   "name": "TCW LET Fixes",
-  "version": "0.3.1",
+  "version": "0.4",
   "homepage_url": "https://discord.thechemicalworkshop.com",
 
 
@@ -12,10 +12,14 @@
 
       "matches": ["*://*.lowendtalk.com/discussion/*"],
       "js": ["mark_yourself.js"]
+    },
+    {
+
+      "matches": ["*://*.lowendtalk.com/discussion/*", "*://*.lowendtalk.com/categories/*","*://*.lowendtalk.com/"],
+      "js": ["detailed_data.js"]
     }
     
     ],
-
 
   "permissions": [
     "storage"
