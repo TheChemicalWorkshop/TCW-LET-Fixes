@@ -1,34 +1,34 @@
 {
-
-  "description": "Fixes some issues with LET, made my Matti from The Chemical Workshop",
+  "description": "Fixes some issues with LET, made by Matti from The Chemical Workshop",
   "manifest_version": 2,
   "name": "TCW LET Fixes",
-  "version": "0.4",
+  "version": "0.6",
   "homepage_url": "https://discord.thechemicalworkshop.com",
-
-
   "content_scripts": [
     {
-
       "matches": ["*://*.lowendtalk.com/discussion/*"],
       "js": ["mark_yourself.js"]
     },
     {
-
-      "matches": ["*://*.lowendtalk.com/discussion/*", "*://*.lowendtalk.com/categories/*","*://*.lowendtalk.com/"],
+      "matches": [
+        "*://*.lowendtalk.com/discussion/*",
+        "*://*.lowendtalk.com/categories/*",
+        "*://*.lowendtalk.com/"
+      ],
       "js": ["detailed_data.js"]
     }
-    
-    ],
-
-  "permissions": [
-    "storage"
   ],
-
+  "permissions": ["storage", "menus"],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "browser_action": {
     "default_icon": "icon.png",
     "default_title": "TCW LET Fixes",
     "default_popup": "view.html"
-  }
-
+  },
+"options_ui": {
+  "page": "options.html",
+  "open_in_tab": true
+}
 }

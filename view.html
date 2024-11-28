@@ -2,10 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #addSection {
+            margin-bottom: 40px; /* Adds space between sections */
+        }
+        .selector-item {
+            margin-bottom: 15px; /* Larger gap between list items */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .selector-item input[type="text"] {
+            width: 200px; /* Ensure text inputs are a reasonable size */
+            margin-right: 10px;
+        }
+        .selector-item button {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <p>Options will be displayed here</p>
-    <br>
-    <p>Made by Matti from The Chemical Workshop for LowEndTalk</p>
+    <h1>Configure Selectors</h1>
+    <div id="addSection">
+        <input type="text" id="selectorName" placeholder="Enter selector (e.g., @DeadlyChemist)">
+        <input type="text" id="selectorColor" placeholder="#ffffff" value="#ffffff" maxlength="7">
+        <label>
+            <input type="checkbox" id="selectorIgnore"> Ignore
+        </label>
+        <button id="addSelector">Add Selector</button>
+    </div>
+    <div id="selectorsList"></div>
+    <script src="options.js"></script>
 </body>
 </html>
